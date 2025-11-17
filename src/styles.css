@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+@font-face {
+  font-family: "Open Sauce Two";
+  src: url("/assets/fonts/OpenSauceTwo-ExtraBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Open Sauce Two";
+  src: url("/assets/fonts/OpenSauceTwo-SemiBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .dark-theme { */
+.dark-theme {
+  --page-background: radial-gradient(125% 125% at 50% 10%, #000000 40%, #6633ee 100%);
+  --primary-background-color: transparent;
+  --secondary-background-color: transparent;
+  --light-color: #ffffff;
+  --light-color-alt: #cccccc;
+  --hover-light-color: #ffda00;
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --dropdown-bg: rgba(0, 0, 0, 0.4);
+  --dropdown-text: #ffffff;
+  --scroll: #322e2e;
+  --text-color: #ffffff;
+  --inputboxes-color: rgba(0, 0, 0, 0.4);
+  --btn-text-color: #ffffff;
+  --btn-color: #6633ee;
+  --text-muted: #9d9d9d;
+  --pop-up-color: #050505;
+  --pop-up-text-color: #ffffff;
+  --container-bg:
+    radial-gradient(circle 400px at 50% 300px, rgba(251, 251, 251, 0.21), #000),
+    linear-gradient(to right, rgba(79, 79, 79, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.2) 1px, transparent 1px),
+    #000;
+}
+
+.light-theme {
+  --page-background: radial-gradient(125% 125% at 50% 10%, #ffffff 40%, #6633ee 100%);
+  --primary-background-color: transparent;
+  --secondary-background-color: transparent;
+  --light-color: #000000;
+  --light-color-alt: #333333;
+  --hover-light-color: #555555;
+  --shadow-color: rgba(0, 0, 0, 0.12);
+  --dropdown-bg: rgba(255, 255, 255, 0.4);
+  --dropdown-text: #000000;
+  --scroll: #d8d8d8;
+  --text-color: #000000;
+  --inputboxes-color: rgba(255, 255, 255, 0.25);
+  --btn-text-color: #ffffff;
+  --btn-color: #6633ee;
+  --text-muted: #6e6e6e;
+  --pop-up-color: #f0f0f0;
+  --pop-up-text-color: #000000;
+
+}
+
+/* Body*/
+body {
+
+  color: var(--text-color);
+  transition: background 0.5s ease, color 0.5s ease;
+  font-family: 'Open Sauce Two', sans-serif !important;
+}
+
+
+/* Header */
+.app-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  font-family: "Open Sauce Two", sans-serif !important;
+  font-size: 30px;
+  background: rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 100;
+}
+
+/* Base Styles */
+.neon-snackbar .mdc-snackbar__surface {
+  background-color: var(--pop-up-color) !important;
+  color: var(--pop-up-text-color) !important;
+  border-radius: 14px !important;
+  padding: 12px 20px !important;
+  font-size: 15px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 28px rgba(72, 8, 235, 0.75) !important;
+}
+
+/* Close Button (both modes) */
+.neon-snackbar .mat-mdc-snack-bar-action {
+  color: #b77bff !important;
+  /* Soft purple */
+  font-weight: 600 !important;
+  margin-left: 20px;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+}
+
+/* Hover effect */
+.neon-snackbar .mat-mdc-snack-bar-action:hover {
+  color: #e3c0ff !important;
+  /* Brighter purple */
+}
+
+.hide-header .app-header {
+  display: none !important;
+}
+
+.blur-bg #background-layer {
+  filter: blur(8px) brightness(0.65);
+  transition: filter 0.3s ease;
+}
+
+#background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  /* stay behind app */
+  background: var(--page-background);
+  background-size: cover;
+  background-attachment: fixed;
+  transition: filter 0.4s ease;
+}

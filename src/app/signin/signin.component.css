@@ -1,0 +1,125 @@
+:host {
+  /* This affects the whole signup component box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font);
+  height: 100vh; /* full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.signin-container {
+  background-color: var(--secondary-background-color);
+  padding: 4rem 4.5rem; /* inside spacing */
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* soft outer shadow */
+  max-width: 380px; /* fixed width for neat box */
+  width: 100%;
+  text-align: center; /* center everything inside */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+
+}
+
+.signin-container:hover {
+  transform: scale(1.02);
+}
+
+
+.signin-container .form{
+    /* Stack fields and helper text vertically inside the overlay */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.signin-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2rem; /* spacing below heading */
+}
+
+/*Input boxes*/
+.signin-container input {
+  background-color: var( --inputboxes-color); /* translucent background */
+  width: 270px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.2rem;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.signin-container input:-webkit-autofill,
+.signin-container input:-webkit-autofill:hover,
+.signin-container input:-webkit-autofill:focus,
+.signin-container input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--inputboxes-color) inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  caret-color: var(--text-color) !important;
+  border: 1px solid #6633ee; /* optional on focus, remove if you don't want */
+  transition: background-color 0s, color 0s;
+}
+
+
+/* Lighter gray placeholders */
+.signin-container input::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+.signin-container input:focus {
+  border-color: #6a3beb;     /* Green border on focus */
+  box-shadow: 0 0 5px rgba(92, 28, 212, 0.4); /* Subtle glow */
+  outline: none;             /* Removes the default blue outline */
+}
+/* signup button */
+.signin-container button {
+  display: block;
+  background-color: #6633ee;
+  color: var(--btn-text-color);
+  border: none;
+  border-radius: 20px;
+  width: 63%;
+  padding: 1rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: block;
+  margin-top: 1.8rem;   /* <--- Pushes button down */
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* On hover, darken the button */
+.signin-container button:hover {
+  background-color: #6633ee;
+  transform: scale(1.05);
+  box-shadow: 0 0 4px 1.5px rgba(69, 160, 73, 0.35);
+}
+
+

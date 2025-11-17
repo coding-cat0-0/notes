@@ -1,0 +1,52 @@
+from fastapi import APIRouter, HTTPException, status, Depends, Body
+from sqlmodel import SQLModel
+from sqlmodel import select, Session
+from models import UserInput, Users
+from database import get_session
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import JSONResponse
+from jwt_hashing import get_current_user, hash_password, check_hashed_password, create_access_token
+
+
+router = APIRouter()
+
+
+    
+@router.post('/signup')
+def signup(
+    user : UserInput, session : Session = Depends(get_session)):
+    
+    query = session.exec(select(Users).where(Users.email == user.email)).first()
+    if query:
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST,
+                            detail = "Email already registered")
+    
+    create = Users(
+        name = user.name,
+        email = user.email,
+        password = hash_password(user.password)
+    )    
+    
+    session.add(create)
+    session.commit()
+    session.refresh(create)
+    return {"message" : "User created"}
+
+@router.post('/signin')
+def signin(
+    email : str = Body(...), password : str = Body(...), session : Session = Depends(get_session)
+):
+    query = session.exec(select(Users).where(Users.email == email)).first()
+    if not query:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail = "Wrong email"
+                    )
+        
+    if not check_hashed_password(password, query.password):
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail = "Invalid password") 
+  
+    access_token = create_access_token(data = {'sub' : query.email,
+                                    'id' : query.id, 'role' : query.role})
+    
+    return {'message':'Login succesful','access_token' : access_token, 'token_type' : 'bearer'}    

@@ -1,0 +1,15 @@
+<div class="home" [class.slide-up]="isSliding">
+    <h1>Welcome to My Notes app</h1>
+
+    <!-- Make the H2 clickable -->
+    <h2 class="clickable-text" (click)="startSlide()">
+        Click here to start
+    </h2>
+</div>
+
+  <!--  <h1>{{ items.join(',') }}</h1>
+
+ use normal ngFor syntax 
+  <ng-container *ngFor="let item of items; let i = index; trackBy: trackByIndex">
+    <app-counter [count]="item" (increment)="increment(i)"></app-counter>
+  </ng-container>-->

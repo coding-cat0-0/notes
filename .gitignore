@@ -40,3 +40,28 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+# Environment variables
+.env
+.env.*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+*.db
+*.sqlite3
+# Node modules
+node_modules/
+
+# Build files
+dist/
+build/
+*.log
+logs/
+# Windows / VS code
+*.cache
+.DS_Store
+.vscode/
+

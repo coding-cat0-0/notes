@@ -1,0 +1,143 @@
+:host {
+  /* This affects the whole signup component box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* Reset default browser spacing and apply consistent sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* ensures padding doesn’t stretch elements */
+}
+
+/* Base body styling: center everything vertically + horizontally */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font);
+  height: 100vh; /* full screen height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+
+.signup-container {
+  background-color: var(--box-color);
+  padding: 2rem 2.5rem; /* inside spacing */
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* soft outer shadow */
+  max-width: 380px; /* fixed width for neat box */
+  width: 100%;
+  text-align: center; /* center everything inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* The actual box */
+.form-container {
+  background-color: #181a1f;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+/* Small scale effect on hover */
+.signup-container:hover {
+  transform: scale(1.02);
+}
+
+.signup-container .form{
+    /* Stack fields and helper text vertically inside the overlay */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.signup-container h2 {
+  color: var(--light-color);
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+
+.signup-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 2rem; /* spacing below heading */
+}
+
+/*Input boxes*/
+.signup-container input {
+  background-color: var( --inputboxes-color); /* translucent background */
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  padding: 1.2rem 1.2rem;
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.signup-container input:-webkit-autofill,
+.signup-container input:-webkit-autofill:hover,
+.signup-container input:-webkit-autofill:focus,
+.signup-container input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px var(--inputboxes-color) inset !important;
+  -webkit-text-fill-color: var(--text-color) !important;
+  caret-color: var(--text-color) !important;
+  border: 1px solid #6633ee; /* optional on focus, remove if you don't want */
+  transition: background-color 0s, color 0s;
+}
+
+/* Lighter gray placeholders */
+.signup-container input::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+.signup-container input:focus {
+  border-color: #6a3beb;     /* Green border on focus */
+  box-shadow: 0 0 5px rgba(91, 23, 215, 0.4);
+  outline: none;             /* Removes the default blue outline */
+}
+/* signup button */
+.signup-container button {
+  background-color: #6633ee;
+  color: var(  --btn-text-color);
+  border: none;
+  align-items: center;
+  border-radius: 20px;
+  width: 63%;
+  margin: 0 auto;   
+  display: block;
+  justify-content: center;
+  padding: 1rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+/* On hover, darken the button */
+.signup-container button:hover {
+  background-color: #6633ee;
+  box-shadow: 0 0 4px 1.5px rgba(69, 160, 73, 0.35);
+}
+
+/*message box */
+#message {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+}

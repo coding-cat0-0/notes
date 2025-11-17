@@ -1,13 +1,28 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>MyApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="utf-8" />
+  <title>My Notes</title>
+  <base href="/" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light-theme';
+      document.documentElement.classList.add(savedTheme);
+    })();
+  </script>
 </head>
+
 <body>
+  <div class="background-glow"></div>
+  <div id="background-layer"></div>
   <app-root></app-root>
 </body>
+
 </html>
